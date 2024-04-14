@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import axios from "axios";
 import { toast, Toaster } from "sonner";
+import { baseUrl } from "@/baseUrl";
 
 const AddEmployee = () => {
   // Add a new employee

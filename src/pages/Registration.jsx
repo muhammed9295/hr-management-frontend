@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast , Toaster } from "sonner";
 import { useNavigate } from "react-router-dom";
+import { baseUrl } from "@/baseUrl";
 
 function Registration() {
   const [passwordVisible, setPasswordVisible] = useState(false);

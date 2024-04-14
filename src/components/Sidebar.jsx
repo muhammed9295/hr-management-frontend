@@ -9,6 +9,7 @@ import { Button } from "./ui/button";
 import axios from "axios";
 import { toast, Toaster } from "sonner";
 import { useNavigate } from "react-router-dom";
+import { baseUrl } from "@/baseUrl";
 
 
 const Sidebar = () => {
