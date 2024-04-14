@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate  } from "react-router-dom";
 import axios from "axios";
 import { toast, Toaster } from "sonner";
+import { baseUrl } from "@/baseUrl";
 
 
 const UserProfile = () => {
@@ -30,7 +31,7 @@ const UserProfile = () => {
     const userProfile = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/v1/employees/get-profile/${idWithoutColon}`,
+          `${baseUrl}/api/v1/employees/get-profile/${idWithoutColon}`,
           { withCredentials: true }
         );
         setEmployee(response.data.data);
@@ -66,7 +67,7 @@ const UserProfile = () => {
 
     try {
       const response = await axios.patch(
-        "http://localhost:8000/api/v1/employees/update-profile",
+        `${baseUrl}/api/v1/employees/update-profile`,
         formDataToSend,
         {
           headers: {

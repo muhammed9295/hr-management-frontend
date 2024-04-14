@@ -1,0 +1,1 @@
+export const baseUrl = `https://hr-management-backend-ia4k.onrender.com/`

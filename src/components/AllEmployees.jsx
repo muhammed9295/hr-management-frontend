@@ -14,78 +14,7 @@ import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const users = [
-  {
-    id: 1,
-    firstname: "Muhammed",
-    lastname: "Sheikh",
-    department: "Projects",
-    age: "32",
-    experience: "7",
-    qualification: "BE",
-    status: "Active",
-  },
-  {
-    id: 2,
-    firstname: "Arfath",
-    lastname: "Momin",
-    department: "Web Development",
-    age: "24",
-    experience: "2",
-    qualification: "BCA",
-    status: "Pending",
-  },
-  {
-    id: 3,
-    firstname: "Arfath",
-    lastname: "Momin",
-    department: "Web Development",
-    age: "24",
-    experience: "2",
-    qualification: "BCA",
-    status: "Pending",
-  },
-  {
-    id: 4,
-    firstname: "Arfath",
-    lastname: "Momin",
-    department: "Web Development",
-    age: "24",
-    experience: "2",
-    qualification: "BCA",
-    status: "Pending",
-  },
-  {
-    id: 5,
-    firstname: "Arfath",
-    lastname: "Momin",
-    department: "Web Development",
-    age: "24",
-    experience: "2",
-    qualification: "BCA",
-    status: "Pending",
-  },
-  {
-    id: 6,
-    firstname: "Arfath",
-    lastname: "Momin",
-    department: "Web Development",
-    age: "24",
-    experience: "2",
-    qualification: "BCA",
-    status: "Pending",
-  },
-  {
-    id: 7,
-    firstname: "Arfath",
-    lastname: "Momin",
-    department: "Web Development",
-    age: "24",
-    experience: "2",
-    qualification: "BCA",
-    status: "Pending",
-  },
-];
+
 
 const AllEmployees = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -97,7 +26,7 @@ const AllEmployees = () => {
     const fetchEmployees = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/v1/employees/get-employees",
+          `${baseUrl}/api/v1/employees/get-employees`,
           { withCredentials: true }
         );
         setEmployees(response.data.data);
@@ -111,11 +40,11 @@ const AllEmployees = () => {
 
   // Delete employee
   const deleteEmployee = async (id) => {
-    const url = `http://localhost:8000/api/v1/employees/delete-profile/${id}`
+    const url = `${baseUrl}/api/v1/employees/delete-profile/${id}`
     console.log(url);
     try {
       await axios.delete(
-        `http://localhost:8000/api/v1/employees/delete-profile/${id}`,
+        `${baseUrl}/api/v1/employees/delete-profile/${id}`,
         { withCredentials: true }
       );
       const updatedEmployees = employees.filter(

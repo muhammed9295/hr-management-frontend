@@ -40,7 +40,7 @@ const AddEmployee = () => {
     });
 
     try {
-      const response = await axios.post("http://localhost:8000/api/v1/employees/add-employee", formDataToSend, {
+      const response = await axios.post(`${baseUrl}/api/v1/employees/add-employee`, formDataToSend, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
